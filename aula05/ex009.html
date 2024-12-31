@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTUDO JS</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Qual a sua Nacionalidade? <input type="text" name="txtnasc" id="txtnasc">
+    <input type="button" value="Verificar" onclick="Verificar()">
+    <div id="res"></div>
+
+    <script>
+        function Verificar(){
+            var txtve = window.document.querySelector('input#txtnasc')
+            var res = window.document.querySelector('div#res')
+            var nasc = txtve.value
+            res.innerHTML = `<p>Sua nacionalidade é de <strong>${nasc}</strong></p>`
+
+             if (nasc.toLowerCase() !== 'brasileiro'){
+                res.innerHTML += `<p><strong>Você é Estrangeiro</strong></p>`
+             }
+             else{
+                 res.innerHTML += `<p><strong>Você é Brasileiro!</strong></p>`
+             }
+        }
+    </script>
+    
+</body>
+</html>
